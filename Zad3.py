@@ -30,8 +30,7 @@ X_numeric = X.iloc[:, numeric_cols].astype(float)
 X_train, X_test, y_train, y_test = train_test_split(X_numeric, y_binary, test_size=0.6, random_state=46)
 #podzial na zbior treningowy i testowy
 
-mlp_pipeline = Pipeline([
-    ('scaler', StandardScaler()), ('mlp', MLPClassifier(hidden_layer_sizes=(10,), activation='relu', solver='adam', max_iter=1500, random_state=46, early_stopping=True))])
+mlp_pipeline = Pipeline([('scaler', StandardScaler()), ('mlp', MLPClassifier(hidden_layer_sizes=(10,), activation='relu', solver='adam', max_iter=1500, random_state=46, early_stopping=True))])
 #MLP z 1 warstwa ukryta (10 neuronow)
 
 mlp_pipeline.fit(X_train, y_train)
@@ -42,7 +41,6 @@ print(f"dokladnosc MLP (1 warstwa ukryta, 10 neuronow): {mlp_accuracy:.4f}")
 #ocena dokladnosci
 
 perceptron_pipeline = Pipeline([('scaler', StandardScaler()), ('perceptron', Perceptron(random_state=46, max_iter=1500))])
-
 perceptron_pipeline.fit(X_train, y_train)
 perceptron_accuracy = perceptron_pipeline.score(X_test, y_test)
 
