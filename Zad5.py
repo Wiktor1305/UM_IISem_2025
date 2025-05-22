@@ -104,4 +104,4 @@ for clf_name, clf in classifiers.items():
 
 ###Komentarz: na podstawie zadania 1 (zbior danych "wine") najlepsza okazala sie regresja logistyczna osiagajac wartosc
 #97,75% oraz wysokie metryki, precision, recall i f1 score. Jesli chodzi o zadanie 2 (na podstawie zbioru danych kkdcup99)
-#to wygrywa decisio tree (99,94%).
+#to wygrywa decision tree (99,94%).
